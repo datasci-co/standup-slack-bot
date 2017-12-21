@@ -18,11 +18,9 @@ services:
     image: 997938224961.dkr.ecr.us-east-1.amazonaws.com/slackup:latest
     entrypoint: /app/entrypoint.sh
     environment:
-      - DATABASE_URL=postgres://postgres:standup@localhost/standup
-      - PORT=3000
+      - SLACK_TOKEN=${SLACK_TOKEN}
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASS}@{DB_HOST}/{DB_NAME}
       - LOG_LEVEL=10
-    ports:
-      - 3000:3000
     logging:
       driver: awslogs
       options:
