@@ -10,10 +10,11 @@ run_params:
   network_configuration:
     awsvpc_configuration:
       subnets:
-          - subnet-911b61f5
-          - subnet-f9863ad6
+          # PublicVPC - PublicSubnetAZ{1..3}Production
+          - subnet-e3f1b4b8
+          - subnet-8d8804b1
+          - subnet-a45e61ed
       security_groups:
-          - sg-9fb2b6ea # default
-          - sg-15796e60 # slackup
+          - sg-410a1634 # slackup
       assign_public_ip: ENABLED
 
