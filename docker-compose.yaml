@@ -1,0 +1,23 @@
+# UPSTREAM - use this for local development, use .yml version for deploys
+version: "2"
+services:
+  database:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=standup
+      - POSTGRES_PASSWORD=standup
+    expose:
+      - 5432
+  standup-bot:
+    build: .
+    entrypoint: /app/entrypoint.sh
+    environment:
+      - DATABASE_URL=postgres://postgres:standup@database/standup
+      - PORT=3000
+      - LOG_LEVEL=10
+    ports:
+      - 3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+

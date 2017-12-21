@@ -1,19 +1,5 @@
 version: "2"
 services:
-  database:
-    image: postgres:latest
-    environment:
-      - POSTGRES_DB=standup
-      - POSTGRES_PASSWORD=standup
-    ports:
-      - 5432:5432
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: ecs-slackup
-        awslogs-region: us-east-1
-        awslogs-stream-prefix: database
-
   standup-bot:
     image: 997938224961.dkr.ecr.us-east-1.amazonaws.com/slackup:latest
     entrypoint: /app/entrypoint.sh
