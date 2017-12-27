@@ -2,7 +2,7 @@
 
 A Slack bot to streamline team standup without disturbing the overall flow of conversation.
 
-# Deployment steps
+## Deployment steps
 
 1. Download [ecs-cli](https://github.com/aws/amazon-ecs-cli)
 2. Configure your shell for prod vault access
